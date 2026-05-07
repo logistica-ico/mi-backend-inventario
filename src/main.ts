@@ -5,7 +5,7 @@ import { join } from 'path';
 import * as express from 'express';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
 
   // Servir archivos estáticos de la carpeta uploads
   app.use('/uploads', express.static(join(process.cwd(), 'uploads')));
