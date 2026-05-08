@@ -36,7 +36,7 @@ async function bootstrap() {
 
   try {
     const { UserService } = require('./user/user.service');
-    const userService = app.get(UserService);
+    const userService = app.get('UserService');
     await userService.create({
       email: 'logistica@icocert.pe',
       password: 'TuClaveSegura123',
