@@ -12,11 +12,8 @@ async function bootstrap() {
 
   // Habilitar CORS para el frontend en React
   app.enableCors({
-  origin: [
-    'https://fascinating-taiyaki-debea6.netlify.app',
-    'http://localhost:3000', 'http://localhost:3001',
-    'http://localhost:5173'
-  ],
+  origin:
+    '*',
   methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
