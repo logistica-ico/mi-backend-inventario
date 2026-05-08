@@ -7,7 +7,7 @@ import { Roles } from '../auth/decorators/roles.decorator';
 import { UserRole } from './entities/user.entity';
 
 @Controller('user')
-@UseGuards(AuthGuard('jwt')) // Aseguramos que el usuario esté autenticado PRIMERO
+//@UseGuards(AuthGuard('jwt')) // Aseguramos que el usuario esté autenticado PRIMERO
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
