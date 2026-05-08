@@ -13,7 +13,7 @@ export class AuthController {
   }
 
   @Get('check-status')
-  @UseGuards(AuthGuard())
+  //@UseGuards(AuthGuard())
   checkStatus(@Req() req: any) {
     return req.user;
   }
