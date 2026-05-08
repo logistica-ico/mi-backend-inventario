@@ -21,3 +21,4 @@ export class AuthController {
   register(@Body() createUserDto: any) {
     return this.authService.create(createUserDto);
 }
+} 
