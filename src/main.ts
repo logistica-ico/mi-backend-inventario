@@ -34,20 +34,6 @@ async function bootstrap() {
   // Prefijo global de API
   app.setGlobalPrefix('api');
 
-  try {
-    const { UserService } = require('./user/user.service');
-    const userService = app.get('UserService');
-    await userService.create({
-      email: 'logistica@icocert.pe',
-      password: 'TuClaveSegura123',
-      firstName: 'Martin',
-      lastName: 'Canales',
-      role: 'ADMIN' 
-    });
-    console.log('✅ Usuario Admin creado correctamente');
-  } catch (error) {
-    console.log('⚠️ El usuario ya existe o falta configuración');
-  }
   const port = process.env.PORT || 3001;
   await app.listen(port, '0.0.0.0');
   console.log(`🚀 Backend corriendo en http://localhost:${port}/api`);
