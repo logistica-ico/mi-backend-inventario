@@ -32,9 +32,10 @@ export class AuthService {
         fullName: user.fullName,
         role: user.role,
       },
-      token: this.jwtService.sign(payload),
+      token: this.jwtService.sign({ id: user.id, email: user.email, role: user.role }),
     };
   }
+  
   async create(createUserDto: any) {
     const user = await this.userService.create(createUserDto);
     const { password, ...result } = user;
