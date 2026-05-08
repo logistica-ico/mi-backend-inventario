@@ -12,11 +12,15 @@ async function bootstrap() {
 
   // Habilitar CORS para el frontend en React
   app.enableCors({
-    origin: true,
-    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-  });
+  origin: [
+    'https://fascinating-taiyaki-debea6.netlify.app',
+    'http://localhost:3000',
+    'http://localhost:5173'
+  ],
+  methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+});
 
   // Validación global de DTOs
   app.useGlobalPipes(
