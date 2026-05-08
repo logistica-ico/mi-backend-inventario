@@ -17,4 +17,7 @@ export class AuthController {
   checkStatus(@Req() req: any) {
     return req.user;
   }
+ @Post('register')
+  register(@Body() createUserDto: any) {
+    return this.authService.create(createUserDto);
 }
